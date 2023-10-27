@@ -24,9 +24,30 @@ console.log(smoothie2("pineapple"));
 ***********************************************************************/
 
 const smoothieMachine = (...ingredients) => {
-  // Your code here
-};
+  let smoothie = ["I'm having a smoothie with"]
 
+  return function addIngredients(...moreIngredients){
+    for(let firstIngredient of ingredients){
+      smoothie.push(` ${firstIngredient} `)
+    };
+    for(let ingredient of moreIngredients){
+      smoothie.push(` and ${ingredient} `);
+    }
+    return smoothie.join("").replace(" and ", " ");
+  }
+};
+let smoothie1 = smoothieMachine();
+
+console.log(smoothie1("milk"));
+// prints "I'm having a smoothie with milk"
+console.log(smoothie1("kale", "spinach"));
+// prints "I'm having a smoothie with milk and kale and spinach"
+console.log(smoothie1("honey", "pears", "berries"));
+// prints "I'm having a smoothie with milk and kale and spinach and honey and pears and berries"
+
+let smoothie2 = smoothieMachine("apples", "bananas", "berries");
+console.log(smoothie2("pineapple"));
+// prints "I'm having a smoothie with apples and bananas and berries and pineapple"
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
   module.exports = smoothieMachine;

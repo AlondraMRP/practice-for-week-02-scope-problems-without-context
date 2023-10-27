@@ -1,4 +1,4 @@
-/***********************************************************************
+ /***********************************************************************
 Let's practice writing closures by creating a method called `dynamicMultiply(num)`.
 The dynamicMultiply function will return a new function that will allow us to
 create new separate custom multiply functions.
@@ -19,8 +19,10 @@ multiplyByFive(5); // returns 25
 ***********************************************************************/
 
 function dynamicMultiply(num) {
-  // Your code here
-}
+  return function multiply (multiple){
+    return num * multiple
+  };
+};
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {

@@ -18,9 +18,14 @@ sandwich2("pb") // => "One sandwich with tomato and pb"
 ***********************************************************************/
 
 function sandwichMaker() {
-  // Your code here
-}
+  const ingredients = ["One sandwich with tomato"];
 
+  return function addIngredient(ingredient){
+      ingredients.push(ingredient);
+      return ingredients.join(" and ");
+  };
+}
+//
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
   module.exports = sandwichMaker;
